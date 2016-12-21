@@ -7,4 +7,5 @@ exports.spread = function(f, self) {
 
 exports.extend = function(target) {
   for (var i=1; i<arguments.length; i++) for (var p in arguments[i]) target[p] = arguments[i][p];
+  return target;
 }
