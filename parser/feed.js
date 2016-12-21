@@ -1,6 +1,7 @@
 
 var parsers = [
-  { matcher: /news\.google\.com$/i, parse: require("./feed/google.js").parse }
+  { matcher: /news\.google\.com$/i, parse: require("./feed/google.js").parse },
+  { matcher: /./, parse: require("./feed/default.js").parse }
 ]
 
 exports.parse = function(html, url) {

@@ -1,4 +1,5 @@
 
+var config = require("../util/config.js");
 var log = require("../util/log.js");
 var AWS = require("aws-sdk");
 var s3 = new AWS.S3();
@@ -7,7 +8,7 @@ exports.write = function(key, data) {
   log.debug("s3", "write", key);
   return new Promise(function(fulfill, reject) {
     s3.putObject({
-      Bucket: "news-reader-article-cache",
+      Bucket: config.s3CacheBucket,
       Key: key,
       Body: JSON.stringify(data),
       CacheControl: "no-cache"
@@ -23,7 +24,7 @@ exports.read = function(key) {
   log.debug("s3", "read", key);
   return new Promise(function(fulfill, reject) {
     s3.getObject({
-      Bucket: "news-reader-article-cache",
+      Bucket: config.s3CacheBucket,
       Key: key
     },
     function(err, entry) {
