@@ -1,6 +1,7 @@
 
 var parsers = [
   { matcher: /news\.google\.com$/i, parse: require("./feed/google.js").parse },
+  { matcher: /thanhnien\.vn$/i, parse: require("./feed/thanhnien.js").parse },
   { matcher: /./, parse: require("./feed/default.js").parse }
 ]
 
