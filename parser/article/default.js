@@ -7,7 +7,7 @@ exports.parse = function(html) {
 
   //remove unwanted elems
   $("script").remove();
-  $("a > *").remove();
+  //$("a > *").remove();
   $(tags.map(tag => tag + " > div").join(", ")).remove();
 
   //find longest text block
