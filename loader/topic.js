@@ -4,19 +4,20 @@ var log = require("../util/log.js");
 var cache = require("../cache/combined.js");
 var pending = {};
 
-exports.load = function(topicName) {
-  if (pending[topicName]) return pending[topicName];
-  return pending[topicName] = load(topicName)
+exports.load = function(url) {
+  if (pending[url]) return pending[url];
+  return pending[url] = load(url)
     .then(result => {
-      delete pending[topicName];
+      delete pending[url];
       return result;
     })
 }
 
-function load(topicName) {
-  log.debug("topic", "load", topicName);
+function load(url) {
+  log.debug("topic", "load", url);
 
-  var key = "topic-" + topicName.toLowerCase();
+  var hash = require('crypto').createHash('md5').update(url).digest("hex");
+  var key = "topic-" + hash;
   return cache.read(key)
     .then(entry => {
       if (new Date().getTime() > entry.lastModified + 15*60*1000) {
@@ -26,19 +27,12 @@ function load(topicName) {
       return entry.data;
     })
     .catch(err => {
-      if (err.message == "NOT_FOUND") return loadFeed(topicName).then(topic => {cache.write(key, topic); return topic;});
+      if (err.message == "NOT_FOUND") return loadFeed(url).then(topic => {cache.write(key, topic); return topic;});
       else throw err;
     })
-    .then(topic => {
-      topic.name = topicName;
-      return topic;
-    });
 }
 
-function loadFeed(topicName) {
-  var url = config.feeds[topicName.toLowerCase()];
-  if (!url) url = config.feeds.$$.replace("${topic}", encodeURIComponent(topicName));
-
+function loadFeed(url) {
   return Promise.resolve(url)
     .then(require("./http.js").load)
     .then(xml => require("../parser/feed.js").parse(xml, url));
