@@ -1,0 +1,18 @@
+{
+  "name": "news-scraper",
+  "version": "0.0.1",
+  "description": "News scraper service",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "author": "Hai Phan",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.7.17",
+    "cheerio": "^0.22.0",
+    "entities": "^1.1.1",
+    "loglevel": "^1.4.1",
+    "request": "^2.79.0"
+  }
+}
