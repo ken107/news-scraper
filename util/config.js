@@ -88,5 +88,9 @@ module.exports = {
     }
   ],
   "awsProfile": "nghedoctin",
-  "s3CacheBucket": "nghedoctin-cache"
+  "s3CacheBucket": "nghedoctin-cache",
+  "origins": [
+    "http://tin10h.com",
+    "http://www.tin10h.com"
+  ]
 }

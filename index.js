@@ -1,13 +1,16 @@
 
 var config = require("./util/config.js");
+var cors = require("cors")({
+  origin: config.origins
+});
 var AWS = require("aws-sdk");
 AWS.config.credentials = new AWS.SharedIniFileCredentials({ profile: config.awsProfile });
 
 exports.mount = function(app) {
-  app.get("/news-scraper", (req, res) => listSources().then(sources => res.send(sources)));
-  app.get("/news-scraper/:sourceIndex", (req, res) => getSource(req.params.sourceIndex).then(source => res.send(source)));
-  app.get("/news-scraper/:sourceIndex/:topicIndex", (req, res) => getTopic(req.params.sourceIndex, req.params.topicIndex).then(topic => res.send(topic)));
-  app.get("/news-scraper/:sourceIndex/:topicIndex/:articleIndex", (req, res) => getArticle(req.params.sourceIndex, req.params.topicIndex, req.params.articleIndex).then(article => res.send(article)));
+  app.get("/news-scraper", cors, (req, res) => listSources().then(sources => res.send(sources)));
+  app.get("/news-scraper/:sourceIndex", cors, (req, res) => getSource(req.params.sourceIndex).then(source => res.send(source)));
+  app.get("/news-scraper/:sourceIndex/:topicIndex", cors, (req, res) => getTopic(req.params.sourceIndex, req.params.topicIndex).then(topic => res.send(topic)));
+  app.get("/news-scraper/:sourceIndex/:topicIndex/:articleIndex", cors, (req, res) => getArticle(req.params.sourceIndex, req.params.topicIndex, req.params.articleIndex).then(article => res.send(article)));
 }
 
 function listSources() {
