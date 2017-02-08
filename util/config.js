@@ -91,6 +91,9 @@ module.exports = {
   "s3CacheBucket": "nghedoctin-cache",
   "origins": [
     "http://tin10h.com",
-    "http://www.tin10h.com"
+    "http://www.tin10h.com",
+    "http://readaloud.news",
+    "http://wwww.readaloud.news",
+    "http://localhost:8080"
   ]
 }
