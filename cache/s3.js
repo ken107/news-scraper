@@ -2,7 +2,7 @@
 var config = require("../util/config.js");
 var log = require("../util/log.js");
 var AWS = require("aws-sdk");
-var s3 = new AWS.S3();
+var s3 = new AWS.S3({ credentials: new AWS.SharedIniFileCredentials({ profile: config.awsProfile }) });
 
 exports.write = function(key, data) {
   log.debug("s3", "write", key);

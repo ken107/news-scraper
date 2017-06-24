@@ -90,10 +90,8 @@ module.exports = {
   "awsProfile": "nghedoctin",
   "s3CacheBucket": "nghedoctin-cache",
   "origins": [
-    "http://tin10h.com",
-    "http://www.tin10h.com",
-    "http://readaloud.news",
-    "http://wwww.readaloud.news",
+    /tin10h\.com$/,
+    /readaloud.news$/,
     "http://localhost:8080"
   ]
 }

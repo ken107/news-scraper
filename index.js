@@ -1,10 +1,6 @@
 
 var config = require("./util/config.js");
-var cors = require("cors")({
-  origin: config.origins
-});
-var AWS = require("aws-sdk");
-AWS.config.credentials = new AWS.SharedIniFileCredentials({ profile: config.awsProfile });
+var cors = require("cors")({ origin: config.origins });
 
 exports.mount = function(app) {
   app.get("/news-scraper", cors, (req, res) => listSources().then(sources => res.send(sources)));
