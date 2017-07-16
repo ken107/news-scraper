@@ -87,11 +87,13 @@ module.exports = {
       ]
     }
   ],
-  "awsProfile": "nghedoctin",
+  "awsProfile": "services",
   "s3CacheBucket": "nghedoctin-cache",
   "origins": [
-    /tin10h\.com$/,
-    /readaloud.news$/,
+    "https://tin10h.com",
+    "https://www.tin10h.com",
+    "https://readaloud.news",
+    "https://www.readaloud.news",
     "http://localhost:8080"
   ]
 }
