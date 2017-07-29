@@ -2,7 +2,7 @@
 module.exports = {
   "sources": [
     {
-      "name": "Google",
+      "name": "Google News",
       "lang": "en",
       "topics": [
         { "name": "Top Stories", "link": "http://news.google.com/news?cf=all&hl=en&ned=us&output=rss" },
@@ -171,6 +171,7 @@ module.exports = {
     "https://www.tin10h.com",
     "https://readaloud.news",
     "https://www.readaloud.news",
+    /\.datviet\.com$/,
     "http://localhost:8080"
   ]
 }
