@@ -4,7 +4,7 @@
   "description": "News scraper service",
   "main": "index.js",
   "scripts": {
-    "test": "node test.js"
+    "deploy": "rsync -avz --exclude=node_modules --exclude=.git . app:apps/services/news-scraper"
   },
   "author": "Hai Phan",
   "license": "ISC",
