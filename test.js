@@ -1,8 +1,11 @@
+const app = require("./index");
 
-var log = require("loglevel");
-log.setLevel("debug");
+const method = process.argv[2];
+const args = Array.prototype.slice.call(process.argv, 3);
+console.log(method, args);
 
-var express = require("express");
-var app = express();
-require("./index.js").mount(app);
-app.listen(8080, () => console.log(`Listening on 8080`));
+if (!app[method]) throw new Error("Bad method");
+
+app[method].apply(null, args)
+  .then(console.log)
+  .catch(console.error)

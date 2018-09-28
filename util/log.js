@@ -1,2 +1,2 @@
 
-module.exports = require("loglevel");
+module.exports = console;

@@ -3,17 +3,12 @@
   "version": "0.0.1",
   "description": "News scraper service",
   "main": "index.js",
-  "scripts": {
-    "deploy": "rsync -avz --exclude=node_modules --exclude=.git . app:apps/services/news-scraper"
-  },
   "author": "Hai Phan",
   "license": "ISC",
   "dependencies": {
     "aws-sdk": "^2.7.17",
     "cheerio": "^0.22.0",
-    "cors": "^2.8.1",
     "entities": "^1.1.1",
-    "loglevel": "^1.4.1",
     "request": "^2.79.0"
   }
 }
