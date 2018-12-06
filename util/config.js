@@ -5,15 +5,16 @@ module.exports = {
       "name": "Google News",
       "lang": "en",
       "topics": [
-        { "name": "Top Stories", "link": "http://news.google.com/news?cf=all&hl=en&ned=us&output=rss" },
-        { "name": "World", "link": "http://news.google.com/news?cf=all&hl=en&ned=us&topic=w&output=rss" },
-        { "name": "U.S.", "link": "http://news.google.com/news?cf=all&hl=en&ned=us&topic=n&output=rss" },
-        { "name": "Business", "link": "http://news.google.com/news?cf=all&hl=en&ned=us&topic=b&output=rss" },
-        { "name": "Technology", "link": "http://news.google.com/news?cf=all&hl=en&ned=us&topic=tc&output=rss" },
-        { "name": "Entertainment", "link": "http://news.google.com/news?cf=all&hl=en&ned=us&topic=e&output=rss" },
-        { "name": "Sports", "link": "http://news.google.com/news?cf=all&hl=en&ned=us&topic=s&output=rss" },
-        { "name": "Science", "link": "http://news.google.com/news?cf=all&hl=en&ned=us&topic=snc&output=rss" },
-        { "name": "Health", "link": "http://news.google.com/news?cf=all&hl=en&ned=us&topic=m&output=rss" }
+        { "name": "Headlines", "link": "https://news.google.com/news/rss/headlines/section/topic/HEADLINE" },
+        { "name": "World", "link": "https://news.google.com/news/rss/headlines/section/topic/WORLD" },
+        { "name": "U.S.", "link": "https://news.google.com/news/rss/headlines/section/topic/NATION" },
+        { "name": "Politics", "link": "https://news.google.com/news/rss/headlines/section/topic/POLITICS" },
+        { "name": "Business", "link": "https://news.google.com/news/rss/headlines/section/topic/BUSINESS" },
+        { "name": "Technology", "link": "https://news.google.com/news/rss/headlines/section/topic/TECHNOLOGY" },
+        { "name": "Entertainment", "link": "https://news.google.com/news/rss/headlines/section/topic/ENTERTAINMENT" },
+        { "name": "Sports", "link": "https://news.google.com/news/rss/headlines/section/topic/SPORTS" },
+        { "name": "Science", "link": "https://news.google.com/news/rss/headlines/section/topic/SCIENCE" },
+        { "name": "Health", "link": "https://news.google.com/news/rss/headlines/section/topic/HEALTH" }
       ]
     },
     {
@@ -54,24 +55,6 @@ module.exports = {
         { "name": "Top News", "link": "http://feeds.reuters.com/reuters/topNews" },
         { "name": "US News", "link": "http://feeds.reuters.com/Reuters/domesticNews" },
         { "name": "World", "link": "http://feeds.reuters.com/Reuters/worldNews" }
-      ]
-    },
-    {
-      "name": "Associated Press",
-      "lang": "en",
-      "topics": [
-        { "name": "Top News", "link": "http://hosted.ap.org/lineups/TOPHEADS.rss?SITE=AP&SECTION=HOME" },
-        { "name": "U.S. National", "link": "http://hosted.ap.org/lineups/USHEADS.rss?SITE=AP&SECTION=HOME" },
-        { "name": "World", "link": "http://hosted.ap.org/lineups/WORLDHEADS.rss?SITE=AP&SECTION=HOME" },
-        { "name": "Politics", "link": "http://hosted.ap.org/lineups/POLITICSHEADS.rss?SITE=AP&SECTION=HOME" },
-        { "name": "Washington", "link": "http://hosted.ap.org/lineups/WASHINGTONHEADS.rss?SITE=AP&SECTION=HOME" },
-        { "name": "Business", "link": "http://hosted.ap.org/lineups/BUSINESSHEADS.rss?SITE=AP&SECTION=HOME" },
-        { "name": "Technology", "link": "http://hosted.ap.org/lineups/TECHHEADS.rss?SITE=AP&SECTION=HOME" },
-        { "name": "Sports", "link": "http://hosted.ap.org/lineups/SPORTSHEADS.rss?SITE=AP&SECTION=HOME" },
-        { "name": "Entertainment", "link": "http://hosted.ap.org/lineups/ENTERTAINMENT.rss?SITE=AP&SECTION=HOME" },
-        { "name": "Health", "link": "http://hosted.ap.org/lineups/HEALTHHEADS.rss?SITE=AP&SECTION=HOME" },
-        { "name": "Science", "link": "http://hosted.ap.org/lineups/SCIENCEHEADS.rss?SITE=AP&SECTION=HOME" },
-        { "name": "Strange", "link": "http://hosted.ap.org/lineups/STRANGEHEADS.rss?SITE=AP&SECTION=HOME" }
       ]
     },
     {
