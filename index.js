@@ -35,11 +35,20 @@ exports.getArticle = function(sourceIndex, topicIndex, articleIndex) {
     .then(topic => topic.articles[articleIndex])
     .then(articleInfo => {
       return require("./loader/article.js").load(articleInfo.link)
-        .then(texts => ({
-          title: articleInfo.title,
-          link: articleInfo.link,
-          texts: texts
-        }))
+        .then(texts => Object.assign({texts}, articleInfo))
+    })
+    .catch(err => console.log(err.stack));
+}
+
+exports.getRelatedArticle = function(sourceIndex, topicIndex, articleIndex, relatedArticleIndex) {
+  return Promise.resolve(config.sources)
+    .then(sources => sources[sourceIndex].topics[topicIndex].link)
+    .then(require("./loader/topic.js").load)
+    .then(topic => topic.articles[articleIndex])
+    .then(article => article.relatedArticles[relatedArticleIndex])
+    .then(articleInfo => {
+      return require("./loader/article.js").load(articleInfo.link)
+        .then(texts => Object.assign({texts}, articleInfo))
     })
     .catch(err => console.log(err.stack));
 }
