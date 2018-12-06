@@ -1,6 +1,6 @@
 
 var config = require("../util/config.js");
-var log = require("../util/log.js");
+const { log } = require("../util/log");
 var AWS = require("aws-sdk");
 var s3 = new AWS.S3({ credentials: new AWS.SharedIniFileCredentials({ profile: config.awsProfile }) });
 

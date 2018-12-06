@@ -1,2 +1,2 @@
 
-module.exports = console;
+exports.log = console;

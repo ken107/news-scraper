@@ -1,5 +1,5 @@
 
-var log = require("../util/log.js");
+const { log } = require("../util/log");
 
 exports.load = function(url, cookieJar) {
   log.debug("http", "load", url);

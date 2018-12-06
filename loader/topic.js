@@ -1,6 +1,6 @@
 
 var config = require("../util/config.js");
-var log = require("../util/log.js");
+const { log } = require("../util/log");
 var cache = require("../cache/combined.js");
 var pending = {};
 
