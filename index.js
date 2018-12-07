@@ -3,7 +3,7 @@ var config = require("./util/config.js");
 
 exports.listSources = function() {
   return Promise.resolve(config.sources)
-    .then(sources => sources.map(source => ({name: source.name, lang: source.lang})));
+    .then(sources => sources.map(source => ({name: source.name, lang: source.lang})))
 }
 
 exports.getSource = function(sourceIndex) {
@@ -12,7 +12,7 @@ exports.getSource = function(sourceIndex) {
     .then(source => ({
       name: source.name,
       topics: source.topics.map(topic => ({name: topic.name}))
-    }));
+    }))
 }
 
 exports.getTopic = function(sourceIndex, topicIndex) {
@@ -25,7 +25,6 @@ exports.getTopic = function(sourceIndex, topicIndex) {
           articles: topic.articles
         }))
     })
-    .catch(err => console.log(err.stack));
 }
 
 exports.getArticle = function(sourceIndex, topicIndex, articleIndex) {
@@ -37,7 +36,6 @@ exports.getArticle = function(sourceIndex, topicIndex, articleIndex) {
       return require("./loader/article.js").load(articleInfo.link)
         .then(texts => Object.assign({texts}, articleInfo))
     })
-    .catch(err => console.log(err.stack));
 }
 
 exports.getRelatedArticle = function(sourceIndex, topicIndex, articleIndex, relatedArticleIndex) {
@@ -50,5 +48,4 @@ exports.getRelatedArticle = function(sourceIndex, topicIndex, articleIndex, rela
       return require("./loader/article.js").load(articleInfo.link)
         .then(texts => Object.assign({texts}, articleInfo))
     })
-    .catch(err => console.log(err.stack));
 }
