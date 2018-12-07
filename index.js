@@ -22,7 +22,7 @@ exports.getTopic = function(sourceIndex, topicIndex) {
       return require("./loader/topic.js").load(topicInfo.link)
         .then(topic => ({
           name: topicInfo.name,
-          articles: topic.articles.map(article => ({title: article.title, source: article.source}))
+          articles: topic.articles
         }))
     })
     .catch(err => console.log(err.stack));
